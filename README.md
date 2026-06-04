@@ -85,20 +85,6 @@ frontend/
 
 ---
 
-## Why This Wins Both Tracks
-
-### Technical Implementation ($1,000)
-- Three-branch CDR read condition state machine with TEE attestation verification
-- `attestWithProof`: verifies operator ECDSA signature on-chain, consumes nonce (replay protection)
-- Composable: each exploit is a Story IP Asset, royalties via RoyaltyModule
-- Conditions: time-based (escalation deadline) + payment-state + caller identity - all on-chain
-
-### Best CDR Application ($1,000 + $1,000)
-- $2B+ quarterly exploit losses - real market pain, not a demo toy
-- Live reentrancy demo: `VulnerableVault` honeypot drained by `ExploitAttack` in test
-- "Company paid without seeing the exploit" - the TEE attestation hash is the receipt
-- Platform infrastructure: any project can register contracts, any researcher can submit
-
 ---
 
 ## Quick Start
@@ -189,19 +175,7 @@ All 11 tests pass:
 
 ---
 
-## Contract Addresses (Story Aeneid Testnet)
 
-Fill after deployment:
-
-| Contract | Address |
-|----------|---------|
-| BountyRegistry | `TBD` |
-| BountyReadCondition | `TBD` |
-| ResearcherWriteCondition | `TBD` |
-| MockTEEVerifier | `TBD` |
-| VulnerableVault | `TBD` |
-
----
 
 ## Environment Variables
 
