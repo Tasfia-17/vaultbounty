@@ -1,0 +1,190 @@
+/* ── Reset ──────────────────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+/* ── Design tokens — Brainfish system ──────────────────────────────── */
+:root {
+  --midnight-ink:    #000000;
+  --canvas-white:    #ffffff;
+  --charcoal-border: #171717;
+  --shadow-base:     #0a0a0d;
+  --pale-ash:        #f5f5f5;
+  --accent-green:    #a3e635;
+  --card-saffron:    #fef3c8;
+  --card-lavender:   #fae9ff;
+  --card-mint:       #d2fae5;
+  --card-pink:       #f5d1fe;
+  --highlight-yellow:#fbbf25;
+  --muted-text:      #525252;
+  --border-light:    #e5e5e5;
+
+  --gradient-sky:    linear-gradient(135deg, rgb(137,229,240), rgb(182,239,246) 27%, rgb(204,243,250) 35%, rgb(197,243,248) 55%);
+  --gradient-honey:  linear-gradient(rgb(253,229,177), rgb(252,214,131));
+  --gradient-lime:   linear-gradient(rgb(219,244,181), rgb(198,238,137));
+
+  --shadow-subtle:   rgb(10,10,13) 2px 2px 0px 0px;
+  --shadow-subtle-2: rgb(10,10,13) 4px 4px 0px 0px;
+  --shadow-subtle-3: rgb(10,10,13) 1px 1px 0px 0px;
+
+  --font: 'Satoshi', ui-sans-serif, system-ui, sans-serif;
+  --font-mono: ui-monospace, 'JetBrains Mono', monospace;
+
+  --radius-btn:  4px;
+  --radius-card: 8px;
+  --radius-lg:   16px;
+  --radius-pill: 100px;
+}
+
+/* ── Base ───────────────────────────────────────────────────────────── */
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--canvas-white);
+  color: var(--midnight-ink);
+  font-family: var(--font);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: inherit; text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* ── Buttons ────────────────────────────────────────────────────────── */
+.btn-primary {
+  display: inline-flex; align-items: center; gap: 6px;
+  background: var(--accent-green);
+  color: var(--midnight-ink);
+  font-family: var(--font);
+  font-size: 14px;
+  font-weight: 700;
+  border: 1px solid var(--charcoal-border);
+  border-radius: var(--radius-btn);
+  padding: 10px 20px;
+  box-shadow: var(--shadow-subtle-3);
+  cursor: pointer;
+  transition: transform 0.1s, box-shadow 0.1s;
+  white-space: nowrap;
+}
+.btn-primary:hover { transform: translate(-1px,-1px); box-shadow: var(--shadow-subtle); }
+.btn-primary:active { transform: translate(0,0); box-shadow: none; }
+.btn-primary:disabled { opacity: 0.45; cursor: not-allowed; transform: none; }
+
+.btn-ghost {
+  display: inline-flex; align-items: center; gap: 6px;
+  background: var(--canvas-white);
+  color: var(--midnight-ink);
+  font-family: var(--font);
+  font-size: 14px;
+  font-weight: 700;
+  border: 1px solid var(--charcoal-border);
+  border-radius: var(--radius-btn);
+  padding: 8px 16px;
+  box-shadow: var(--shadow-subtle-3);
+  cursor: pointer;
+  transition: transform 0.1s, box-shadow 0.1s;
+  white-space: nowrap;
+}
+.btn-ghost:hover { transform: translate(-1px,-1px); box-shadow: var(--shadow-subtle); }
+.btn-ghost:active { transform: translate(0,0); box-shadow: none; }
+.btn-ghost:disabled { opacity: 0.45; cursor: not-allowed; transform: none; }
+
+/* ── Inputs ─────────────────────────────────────────────────────────── */
+input, textarea, select {
+  background: var(--canvas-white);
+  color: var(--midnight-ink);
+  font-family: var(--font);
+  font-size: 14px;
+  font-weight: 500;
+  border: 1px solid #737373;
+  border-radius: var(--radius-btn);
+  padding: 10px 12px;
+  width: 100%;
+  outline: none;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+input:focus, textarea:focus, select:focus {
+  border-color: var(--midnight-ink);
+  box-shadow: var(--shadow-subtle-3);
+}
+textarea { resize: vertical; min-height: 100px; }
+label {
+  display: block;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--midnight-ink);
+  margin-bottom: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+/* ── Cards ──────────────────────────────────────────────────────────── */
+.card {
+  background: var(--canvas-white);
+  border: 1px solid var(--charcoal-border);
+  border-radius: var(--radius-card);
+  padding: 24px;
+  box-shadow: var(--shadow-subtle-3);
+}
+.card-lg {
+  background: var(--canvas-white);
+  border: 1px solid var(--charcoal-border);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  box-shadow: var(--shadow-subtle);
+}
+
+/* ── Badges ─────────────────────────────────────────────────────────── */
+.badge {
+  display: inline-flex; align-items: center;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--charcoal-border);
+  white-space: nowrap;
+}
+.badge-pending   { background: var(--card-saffron);  color: #92400e; }
+.badge-attested  { background: var(--card-lavender); color: #6b21a8; }
+.badge-settled   { background: var(--card-mint);     color: #065f46; }
+.badge-escalated { background: var(--card-pink);     color: #9d174d; }
+
+/* ── Severity ───────────────────────────────────────────────────────── */
+.severity-CRITICAL { color: #dc2626; font-weight: 700; }
+.severity-HIGH     { color: #d97706; font-weight: 700; }
+.severity-MEDIUM   { color: #ea580c; font-weight: 700; }
+.severity-LOW      { color: var(--muted-text); font-weight: 500; }
+.severity-NONE     { color: var(--muted-text); }
+
+/* ── Gate status ────────────────────────────────────────────────────── */
+.gate-open   { color: #16a34a; font-weight: 700; font-size: 12px; }
+.gate-closed { color: #dc2626; font-weight: 700; font-size: 12px; }
+
+/* ── Pill tag ───────────────────────────────────────────────────────── */
+.pill {
+  display: inline-flex; align-items: center;
+  background: var(--canvas-white);
+  color: var(--midnight-ink);
+  font-size: 12px;
+  font-weight: 700;
+  border: 1px solid var(--charcoal-border);
+  border-radius: var(--radius-pill);
+  padding: 4px 12px;
+}
+
+/* ── Mono ───────────────────────────────────────────────────────────── */
+.mono {
+  font-family: var(--font-mono);
+  font-size: 12px;
+}
+.muted { color: var(--muted-text); }
+.truncate { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+/* ── Animations ─────────────────────────────────────────────────────── */
+@keyframes spin { to { transform: rotate(360deg); } }
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.fade-up { animation: fadeUp 0.4s ease both; }

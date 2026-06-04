@@ -1,0 +1,30 @@
+{
+  "name": "@vaultbounty/sdk",
+  "version": "0.1.0",
+  "type": "module",
+  "main": "./dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "demo:submit": "tsx src/scripts/submit-report.ts",
+    "demo:attest": "tsx src/scripts/attest-severity.ts",
+    "demo:settle": "tsx src/scripts/settle.ts",
+    "demo:escalate": "tsx src/scripts/escalate.ts",
+    "demo:read-verify": "tsx src/scripts/read-verify.ts",
+    "demo:read-disclose": "tsx src/scripts/read-disclose.ts",
+    "demo:full": "tsx src/scripts/full-demo.ts"
+  },
+  "dependencies": {
+    "@piplabs/cdr-sdk": "^0.2.1",
+    "@story-protocol/core-sdk": "^1.3.0",
+    "viem": "^2.21.0",
+    "dotenv": "^16.4.5"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "tsx": "^4.19.0",
+    "typescript": "^5.5.0"
+  },
+  "pnpm": {
+    "overrides": { "@peculiar/webcrypto": "1.7.0" }
+  }
+}
