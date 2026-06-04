@@ -2,7 +2,7 @@
  * Step 1: Researcher encrypts exploit and submits report on-chain.
  * Run: pnpm demo:submit
  *
- * Outputs: vault UUID + reportId — save these in .env for subsequent steps.
+ * Outputs: vault UUID + reportId - save these in .env for subsequent steps.
  */
 import "dotenv/config";
 import { getResearcherClients, CONTRACTS } from "../clients.js";
@@ -41,7 +41,7 @@ async function main() {
   const targetContract = (process.env.TARGET_CONTRACT ?? "0x0000000000000000000000000000000000000001") as `0x${string}`;
   const company        = (process.env.COMPANY_ADDRESS ?? account.address) as `0x${string}`;
 
-  // Allocate vault — pre-reads nextReportId so conditionData is correct from day one
+  // Allocate vault - pre-reads nextReportId so conditionData is correct from day one
   const { uuid, expectedReportId } = await allocateExploitVault(cdrClient, publicClient, account.address, EXPLOIT_PAYLOAD);
   console.log(`  Expected reportId: ${expectedReportId}`);
 

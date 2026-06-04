@@ -15,8 +15,8 @@ contract BountyRegistry {
     enum State {
         PENDING,    // submitted, awaiting TEE attestation
         ATTESTED,   // TEE confirmed exploit is valid + severity set
-        SETTLED,    // company paid — exploit decrypted to company
-        ESCALATED   // deadline passed unpaid — released to DAO
+        SETTLED,    // company paid - exploit decrypted to company
+        ESCALATED   // deadline passed unpaid - released to DAO
     }
 
     // ─── Structs ──────────────────────────────────────────────────────────────
@@ -136,7 +136,7 @@ contract BountyRegistry {
         if (!att.exploitSuccess) revert ExploitNotConfirmed();
         if (att.reportId != reportId) revert Unauthorized();
 
-        // Consume nonce — prevents replaying same attestation
+        // Consume nonce - prevents replaying same attestation
         teeVerifier.verify(attestationBytes, signature);
 
         r.severity        = Severity(att.severity);

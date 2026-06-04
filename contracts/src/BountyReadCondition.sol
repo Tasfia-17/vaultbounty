@@ -7,12 +7,12 @@ import "./BountyRegistry.sol";
 /// @title  BountyReadCondition
 /// @notice CDR read condition implementing three disclosure paths:
 ///
-///   Path 0 — VERIFY:   TEE/DAO members can verify exploit validity (report not yet settled/escalated)
-///   Path 1 — DISCLOSE: Company reads decrypted exploit after paying (report SETTLED)
-///   Path 2 — ESCALATE: DAO reads after deadline passes without payment (report ESCALATED)
+///   Path 0 - VERIFY:   TEE/DAO members can verify exploit validity (report not yet settled/escalated)
+///   Path 1 - DISCLOSE: Company reads decrypted exploit after paying (report SETTLED)
+///   Path 2 - ESCALATE: DAO reads after deadline passes without payment (report ESCALATED)
 ///
-/// conditionData  = abi.encode(uint256 reportId)         — set at vault allocation
-/// accessAuxData  = abi.encode(uint8 path, address caller) — passed at read time
+/// conditionData  = abi.encode(uint256 reportId)         - set at vault allocation
+/// accessAuxData  = abi.encode(uint8 path, address caller) - passed at read time
 contract BountyReadCondition is ICDRReadCondition {
 
     uint8 public constant PATH_VERIFY   = 0;
@@ -38,7 +38,7 @@ contract BountyReadCondition is ICDRReadCondition {
         BountyRegistry.Report memory r = registry.getReport(reportId);
 
         if (path == PATH_VERIFY) {
-            // Anyone can verify — report must exist and not yet be resolved
+            // Anyone can verify - report must exist and not yet be resolved
             return r.researcher != address(0)
                 && r.state != BountyRegistry.State.SETTLED
                 && r.state != BountyRegistry.State.ESCALATED;

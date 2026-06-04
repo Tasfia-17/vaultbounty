@@ -156,7 +156,7 @@ export function Explorer({ walletAddr }: { walletAddr: string }) {
       )}
       {!loading && CONTRACTS.BOUNTY_REGISTRY && reports.length === 0 && (
         <div className="card" style={{ textAlign: "center", padding: 60, color: "#525252", background: "var(--pale-ash)" }}>
-          No reports yet — submit the first one.
+          No reports yet - submit the first one.
         </div>
       )}
       {reports.map(({ id, report }) => (
@@ -315,7 +315,7 @@ export function CompanyPortal({ walletAddr }: { walletAddr: string }) {
           {report.attestationHash && report.attestationHash !== "0x" + "0".repeat(64) && (
             <div style={{ background: "var(--card-mint)", border: "1px solid #065f46", borderRadius: 8, padding: "16px 18px", marginBottom: 16 }}>
               <div style={{ fontSize: 11, fontWeight: 700, color: "#065f46", marginBottom: 8, textTransform: "uppercase", letterSpacing: "0.06em" }}>
-                ✓ TEE Attestation — Exploit verified on-chain
+                ✓ TEE Attestation - Exploit verified on-chain
               </div>
               <div className="mono" style={{ fontSize: 11, wordBreak: "break-all", color: "#374151", marginBottom: 8 }}>
                 {report.attestationHash}

@@ -75,9 +75,9 @@ export function Hero({ onLaunch }: { onLaunch: () => void }) {
 
 export function HowItWorks() {
   const steps = [
-    { n: "01", title: "Researcher encrypts", desc: "Exploit bytecode + PoC are encrypted into a CDR vault. The company never sees it — only the vault UUID goes on-chain.", color: "var(--card-mint)" },
+    { n: "01", title: "Researcher encrypts", desc: "Exploit bytecode + PoC are encrypted into a CDR vault. The company never sees it - only the vault UUID goes on-chain.", color: "var(--card-mint)" },
     { n: "02", title: "TEE verifies severity", desc: "A Trusted Execution Environment forks the target contract, runs the exploit inside the enclave, and signs an attestation. Severity is now on-chain proof.", color: "var(--card-lavender)" },
-    { n: "03", title: "Company pays atomically", desc: "One transaction pays the bounty and flips the CDR gate. The decrypt key is released to the company — only after payment clears.", color: "var(--card-saffron)" },
+    { n: "03", title: "Company pays atomically", desc: "One transaction pays the bounty and flips the CDR gate. The decrypt key is released to the company - only after payment clears.", color: "var(--card-saffron)" },
     { n: "04", title: "7-day escalation window", desc: "No payment? After the deadline, the CDR vault auto-releases to the Whitehat DAO. The researcher still gets paid. The company gets tagged.", color: "var(--card-pink)" },
   ];
 
@@ -173,7 +173,7 @@ export function Tracks() {
               prize: "$1,000 + $1,000",
               bg: "#fbbf25",
               items: [
-                "$2B+ quarterly exploit losses — real market pain",
+                "$2B+ quarterly exploit losses - real market pain",
                 "Live reentrancy demo: drain honeypot on testnet",
                 "Researcher never trusts company. Company never trusts researcher.",
                 "TEE attestation hash = cryptographic receipt",

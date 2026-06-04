@@ -134,7 +134,7 @@ contract VaultBountyTest is Test {
         // First attest succeeds
         registry.attestWithProof(rid, att, sig, 1 ether);
 
-        // Try to replay on a new report — should fail because nonce is consumed
+        // Try to replay on a new report - should fail because nonce is consumed
         vm.prank(researcher);
         uint256 rid2 = registry.submitReport(88, target, company);
         // Reuse same attestation bytes (same nonce) → should revert

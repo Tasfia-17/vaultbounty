@@ -1,5 +1,5 @@
 /**
- * Full end-to-end demo flow — all steps in one script.
+ * Full end-to-end demo flow - all steps in one script.
  * Suitable for Demo Day: runs the complete lifecycle with console output at each step.
  *
  * Run: pnpm demo:full
@@ -25,7 +25,7 @@ async function checkPath(publicClient: any, reportId: bigint, path: 0 | 1 | 2, c
 
 async function main() {
   console.log("╔══════════════════════════════════════════════════╗");
-  console.log("║          VaultBounty — Full Demo Flow            ║");
+  console.log("║          VaultBounty - Full Demo Flow            ║");
   console.log("╚══════════════════════════════════════════════════╝\n");
   console.log("Network  : Story Aeneid Testnet (Chain ID 1315)");
   console.log("Explorer : https://aeneid.storyscan.io");
@@ -53,7 +53,7 @@ async function main() {
     submittedAt: new Date().toISOString(),
   });
 
-  // Pre-reads nextReportId — vault conditionData is wired correctly from allocation
+  // Pre-reads nextReportId - vault conditionData is wired correctly from allocation
   const { uuid, expectedReportId } = await allocateExploitVault(cdrClient, publicClient, researcher.address, exploitPayload);
 
   const submitHash = await resWallet.writeContract({
@@ -99,7 +99,7 @@ async function main() {
   console.log(`✓ Severity: CRITICAL | Bounty: 0.01 IP`);
   console.log(`✓ TX: https://aeneid.storyscan.io/tx/${attestTx}`);
 
-  // ── STEP 4: Company pays — THE DEMO MOMENT ────────────────────────────────
+  // ── STEP 4: Company pays - THE DEMO MOMENT ────────────────────────────────
   console.log(SEPARATOR);
   console.log("STEP 4: Company pays bounty (THE KEY DEMO MOMENT)");
 

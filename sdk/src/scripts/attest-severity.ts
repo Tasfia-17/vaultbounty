@@ -41,7 +41,7 @@ async function main() {
     // ── Primary: call TEE service, post signed attestation on-chain ────────
     const exploitPayload = JSON.stringify({
       severity: SeverityLabel[severity],
-      pocSummary: "Reentrancy exploit — 100% fund drainage",
+      pocSummary: "Reentrancy exploit - 100% fund drainage",
       targetContract,
     });
 

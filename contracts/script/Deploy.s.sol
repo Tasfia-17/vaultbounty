@@ -31,7 +31,7 @@ contract Deploy is Script {
         BountyReadCondition     readCond  = new BountyReadCondition(address(reg));
         ResearcherWriteCondition writeCond = new ResearcherWriteCondition();
 
-        // 5. Demo contracts — deploy a vulnerable vault and seed it
+        // 5. Demo contracts - deploy a vulnerable vault and seed it
         VulnerableVault vuln = new VulnerableVault();
         vuln.deposit{value: 0.05 ether}(); // honeypot: 0.05 IP testnet
 

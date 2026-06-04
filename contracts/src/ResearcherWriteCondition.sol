@@ -4,7 +4,7 @@ pragma solidity ^0.8.26;
 import "./interfaces/ICDRCondition.sol";
 
 /// @title  ResearcherWriteCondition
-/// @notice CDR write condition — only the registered researcher can write to the vault.
+/// @notice CDR write condition - only the registered researcher can write to the vault.
 ///         conditionData = abi.encode(address researcher)
 contract ResearcherWriteCondition is ICDRWriteCondition {
     function checkWriteCondition(

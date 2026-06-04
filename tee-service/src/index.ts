@@ -1,5 +1,5 @@
 /**
- * TEE Simulation Service — VaultBounty
+ * TEE Simulation Service - VaultBounty
  *
  * In production: runs inside Intel TDX. The MRTD/RTMR measurements pin this binary.
  * For hackathon: runs as a Node.js service. The operator signs attestations with a
@@ -156,6 +156,6 @@ app.get("/health", (_req, res) => {
 
 app.listen(PORT, () => {
   console.log(`VaultBounty TEE service running on :${PORT}`);
-  console.log(`POST /verify  — submit exploit payload for TEE verification`);
-  console.log(`GET  /health  — liveness check`);
+  console.log(`POST /verify  - submit exploit payload for TEE verification`);
+  console.log(`GET  /health  - liveness check`);
 });

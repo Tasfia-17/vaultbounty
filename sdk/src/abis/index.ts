@@ -1,4 +1,4 @@
-// BountyRegistry ABI — minimal subset needed by the SDK
+// BountyRegistry ABI - minimal subset needed by the SDK
 export const BOUNTY_REGISTRY_ABI = [
   // submitReport
   {
@@ -23,7 +23,7 @@ export const BOUNTY_REGISTRY_ABI = [
     ],
     outputs: [],
   },
-  // attestWithProof — full TEE path
+  // attestWithProof - full TEE path
   {
     name: "attestWithProof",
     type: "function",

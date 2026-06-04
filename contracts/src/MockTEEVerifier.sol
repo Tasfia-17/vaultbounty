@@ -79,7 +79,7 @@ contract MockTEEVerifier {
         usedNonces[att.nonce] = true;
     }
 
-    /// @notice Pure verification — does not consume nonce. For condition contracts to
+    /// @notice Pure verification - does not consume nonce. For condition contracts to
     ///         validate without side effects.
     function verifyView(
         bytes calldata attestation,

@@ -4,7 +4,7 @@
 
 Researchers encrypt exploit proofs inside CDR vaults. A TEE verifies severity on-chain. Companies pay *before* they see the code. No trusted middleman, no CFAA exposure, no patch-and-ditch.
 
-Built for the **Story Protocol CDR Hackathon 2026** — targeting both prize tracks.
+Built for the **Story Protocol CDR Hackathon 2026** - targeting both prize tracks.
 
 ---
 
@@ -30,7 +30,7 @@ TEE forks target contract, runs exploit inside enclave → signs severity attest
        ↓
 Attestation posted on-chain (ECDSA signature from registered operator)
        ↓
-Company reviews: "CRITICAL — 100% funds drained" — without ever seeing the PoC
+Company reviews: "CRITICAL - 100% funds drained" - without ever seeing the PoC
        ↓
 Company pays bounty → ONE transaction flips CDR gate CLOSED → OPEN
        ↓
@@ -53,34 +53,34 @@ No payment in 7 days → escalate → CDR gate opens for Whitehat DAO
 
 ```
 contracts/
-  BountyRegistry.sol          — core lifecycle: submit → attest → settle → escalate
-  BountyReadCondition.sol     — CDR ICDRReadCondition: three-path state machine
-  ResearcherWriteCondition.sol — CDR ICDRWriteCondition: only researcher can write
-  MockTEEVerifier.sol         — DAO-governed operator registry, ECDSA attestation verify
-  VulnerableVault.sol         — demo target: reentrancy bug for live exploit proof
+  BountyRegistry.sol          - core lifecycle: submit → attest → settle → escalate
+  BountyReadCondition.sol     - CDR ICDRReadCondition: three-path state machine
+  ResearcherWriteCondition.sol - CDR ICDRWriteCondition: only researcher can write
+  MockTEEVerifier.sol         - DAO-governed operator registry, ECDSA attestation verify
+  VulnerableVault.sol         - demo target: reentrancy bug for live exploit proof
 
 sdk/
-  src/vaultbounty.ts          — CDR vault allocation, registry interactions, TEE client
-  src/clients.ts              — viem + CDR + Story client factories
-  src/abis/                   — contract ABIs
+  src/vaultbounty.ts          - CDR vault allocation, registry interactions, TEE client
+  src/clients.ts              - viem + CDR + Story client factories
+  src/abis/                   - contract ABIs
   src/scripts/
-    submit-report.ts          — researcher: allocate vault + submit on-chain
-    attest-severity.ts        — TEE operator: sign + post attestation (TEE service or EOA)
-    settle.ts                 — company: pay bounty, show gate flip
-    escalate.ts               — anyone: escalate after deadline
-    read-verify.ts            — verify path CDR read
-    read-disclose.ts          — disclose path CDR read (post-payment)
-    full-demo.ts              — end-to-end demo in one script
+    submit-report.ts          - researcher: allocate vault + submit on-chain
+    attest-severity.ts        - TEE operator: sign + post attestation (TEE service or EOA)
+    settle.ts                 - company: pay bounty, show gate flip
+    escalate.ts               - anyone: escalate after deadline
+    read-verify.ts            - verify path CDR read
+    read-disclose.ts          - disclose path CDR read (post-payment)
+    full-demo.ts              - end-to-end demo in one script
 
 tee-service/
-  src/index.ts                — Express API: POST /verify signs attestations
-  src/sign-attestation.ts     — CLI: sign + post attestation directly on-chain
+  src/index.ts                - Express API: POST /verify signs attestations
+  src/sign-attestation.ts     - CLI: sign + post attestation directly on-chain
 
 frontend/
-  src/App.tsx                 — landing page + app shell
-  src/components/landing.tsx  — hero, how-it-works, CDR paths, prize tracks
-  src/components/panels.tsx   — Explorer, Submit Report, Company Portal
-  src/lib/                    — viem clients, registry helpers, constants
+  src/App.tsx                 - landing page + app shell
+  src/components/landing.tsx  - hero, how-it-works, CDR paths, prize tracks
+  src/components/panels.tsx   - Explorer, Submit Report, Company Portal
+  src/lib/                    - viem clients, registry helpers, constants
 ```
 
 ---
@@ -91,12 +91,12 @@ frontend/
 - Three-branch CDR read condition state machine with TEE attestation verification
 - `attestWithProof`: verifies operator ECDSA signature on-chain, consumes nonce (replay protection)
 - Composable: each exploit is a Story IP Asset, royalties via RoyaltyModule
-- Conditions: time-based (escalation deadline) + payment-state + caller identity — all on-chain
+- Conditions: time-based (escalation deadline) + payment-state + caller identity - all on-chain
 
 ### Best CDR Application ($1,000 + $1,000)
-- $2B+ quarterly exploit losses — real market pain, not a demo toy
+- $2B+ quarterly exploit losses - real market pain, not a demo toy
 - Live reentrancy demo: `VulnerableVault` honeypot drained by `ExploitAttack` in test
-- "Company paid without seeing the exploit" — the TEE attestation hash is the receipt
+- "Company paid without seeing the exploit" - the TEE attestation hash is the receipt
 - Platform infrastructure: any project can register contracts, any researcher can submit
 
 ---
@@ -288,7 +288,7 @@ On-chain: BountyRegistry.attestWithProof(reportId, attestationBytes, signature, 
 
 | Threat | Mitigation |
 |--------|-----------|
-| Validator collusion | CDR threshold encryption — no single validator holds full key |
+| Validator collusion | CDR threshold encryption - no single validator holds full key |
 | Replay attack | `usedNonces` mapping in `MockTEEVerifier`, nonce in every attestation |
 | Exploit leakage | Raw PoC never leaves TEE enclave; only signed result returned |
 | Company sees exploit before paying | CDR gate physically closed until `State.SETTLED` |

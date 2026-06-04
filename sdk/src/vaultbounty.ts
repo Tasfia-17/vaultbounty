@@ -11,7 +11,7 @@ import { uuidToLabel } from "@piplabs/cdr-sdk";
 import type { CDRClient } from "@piplabs/cdr-sdk";
 import { CONTRACTS, BOUNTY_REGISTRY_ABI, RPC_URL } from "./index.js";
 
-// CDR vault path constants — must match BountyReadCondition.sol
+// CDR vault path constants - must match BountyReadCondition.sol
 export const PATH_VERIFY   = 0;
 export const PATH_DISCLOSE = 1;
 export const PATH_ESCALATE = 2;
@@ -149,7 +149,7 @@ export async function submitReport(
   const receipt = await publicClient.waitForTransactionReceipt({ hash });
   console.log(`✓ Report submitted: tx=${hash}`);
 
-  // ReportSubmitted(uint256 indexed reportId, ...) — reportId is topics[1]
+  // ReportSubmitted(uint256 indexed reportId, ...) - reportId is topics[1]
   const reportId = receipt.logs[0]?.topics[1]
     ? BigInt(receipt.logs[0].topics[1])
     : (() => { throw new Error("ReportSubmitted event not found in logs"); })();

@@ -35,7 +35,7 @@ async function main() {
     args: [uuid, accessAuxData, conditionData, account.address],
   });
   console.log(`\nCDR gate PATH_VERIFY: ${allowed ? "✅ OPEN" : "❌ CLOSED"}`);
-  if (!allowed) { console.log("Gate is closed — report may already be settled or escalated."); return; }
+  if (!allowed) { console.log("Gate is closed - report may already be settled or escalated."); return; }
 
   // 2. Read from CDR vault
   const { cdrClient } = await getResearcherClients();
@@ -47,7 +47,7 @@ async function main() {
   });
 
   const payload = JSON.parse(new TextDecoder().decode(dataKey));
-  console.log("\n✅ Exploit payload decrypted (VERIFY — exploit exists):");
+  console.log("\n✅ Exploit payload decrypted (VERIFY - exploit exists):");
   console.log(`   Vulnerability : ${payload.vulnerability ?? payload.description ?? "(see full payload)"}`);
   console.log(`   Target        : ${payload.targetContract}`);
   console.log(`   Severity      : ${payload.severity}`);

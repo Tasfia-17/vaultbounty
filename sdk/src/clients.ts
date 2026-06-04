@@ -22,7 +22,7 @@ export const CONTRACTS = {
   RESEARCHER_WRITE_CONDITION:   process.env.RESEARCHER_WRITE_CONDITION_ADDRESS!   as `0x${string}`,
   MOCK_TEE_VERIFIER:            process.env.MOCK_TEE_VERIFIER_ADDRESS!            as `0x${string}`,
   VULNERABLE_VAULT:             process.env.VULNERABLE_VAULT_ADDRESS!             as `0x${string}`,
-  // Story Protocol (Aeneid testnet — fixed addresses)
+  // Story Protocol (Aeneid testnet - fixed addresses)
   IP_ASSET_REGISTRY:            "0x77319B4031e6eF1250907aa00018B8B1c67a244b" as `0x${string}`,
   LICENSING_MODULE:             "0x04fbd8a2e56dd85CFD5500A4A4DfA955B9f1dE6f" as `0x${string}`,
   PIL_TEMPLATE:                 "0x2E896b0b2Fdb7457499B56AAaA4AE55BCB4Cd316" as `0x${string}`,

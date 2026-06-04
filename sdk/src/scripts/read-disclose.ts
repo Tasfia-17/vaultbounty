@@ -51,7 +51,7 @@ async function main() {
   });
 
   const payload = JSON.parse(new TextDecoder().decode(dataKey));
-  console.log("\n✅ EXPLOIT UNLOCKED — full PoC decrypted:");
+  console.log("\n✅ EXPLOIT UNLOCKED - full PoC decrypted:");
   console.log(JSON.stringify(payload, null, 2));
   console.log("\nBounty has been paid. Exploit is now in your possession.");
   console.log("The TEE attestation hash on-chain is the cryptographic receipt.");
